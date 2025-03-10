@@ -1,0 +1,33 @@
+select department_name || q'[department manager ID:]
+|| manager_id as "manager id"
+from departments;
+
+DML = Data manupulation language
+
+ duplicate rows omit by key named distinct
+
+privisize power spacific user of data.link break to delete data.
+
+displaying table structure
+order key describe
+varchar(20) = variable character use only inputed name and other space leave. 20 space for limit but 
+you input 11 character and 9 space will be leaved. this is how we can save byte
+
+limiting row using selected use 
+Whare clause to find spacific data
+where department_id = 90;
+
+
+
+select first_name || ' ' || last_name as "Employees Name",salary,salary+(salary+500)*0.10 as "total salary" 
+,commission_pct*100|| '%'
+from  Employees;
+
+select  department_id,first_name,salary " payment"
+from  Employees;
+
+select employee_id,last_name,salary,department_id,hire_date
+from employees
+--where salary>3000 and department_id= 90 or hire_date='17-oct-03' ;
+--where salary between 15000 and 26000;
+where hire_date in = ('17-oct-03') ;

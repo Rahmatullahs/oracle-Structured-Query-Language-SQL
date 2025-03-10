@@ -1,0 +1,59 @@
+
+--    case expression
+SELECT last_name, job_id, salary,
+case job_id
+when 'it_prog' then 1.10*salary
+when 'it_prog' then 1.10*salary
+else salary end  extasalary
+    FROM  employees;
+
+SELECT last_name,salary,
+(case
+when salary<5000  then 'low'
+
+else 'Excelent'
+end) qualified_salary
+FROM employees;
+
+SELECT last_name,job_id,salary,
+decode(job_id,'it_prog',1.10*salary, 
+salary ) newsalary
+
+
+FROM employees;
+
+
+SELECT round (avg(salary),0),max(salary),sum(salary) ,count(salary)
+FROM employees
+where job_id like '%REP%';
+
+
+SELECT job_id ,round (avg(salary),0),max(salary),sum(salary) ,count(salary)
+FROM employees
+where job_id like '%REP%'
+group by job_id;
+order by 1 desc
+
+SELECT department_id ,round (avg(salary),0),max(salary),sum(salary) ,count(salary)
+FROM employees
+where job_id like '%REP%'
+group by department_id;
+
+
+SELECT department_id ,max(salary)
+FROM employees
+group by department_id
+having max(salary)>10000;
+
+
+SELECT department_id ,max(salary)
+FROM employees
+group by department_id
+having max(salary)>10000
+order by 2 desc;
+
+--nesting group
+
+SELECT round(max(avg(salary)),0)
+FROM employees
+group by department_id; 

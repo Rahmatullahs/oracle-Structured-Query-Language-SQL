@@ -1,0 +1,30 @@
+
+
+SELECT first_name,hire_date
+FROM employees
+where hire_date between ('01-jan-02')   and ('30-dec-05');
+where to_char(hire_date,'yy') between 02   and 05;
+
+
+SELECT first_name, hire_date, job_id
+FROM employees 
+where job_id in ('IT_PROG' , 'SA_MAN');
+where job_id like '%PROG%' or  job_id like '%MAN%';
+
+
+SELECT first_name,hire_date
+FROM employees   
+WHERE hire_date >= '01 Jan 2008';
+
+
+SELECT *
+FROM employees 
+WHERE employee_id=150 or employee_id=160;
+WHERE employee_id in (150,160);
+
+SELECT first_name,salary,commission_pct,hire_date
+FROM employees   
+WHERE salary<10000;
+
+SELECT job_id
+FROM employees ;
