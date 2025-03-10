@@ -1,0 +1,18 @@
+ 
+ outer join
+ no direct match
+ 
+ left outer join
+ 
+ 
+  right outer join
+  
+ inner join
+ matching part 
+ full outer join
+
+
+select e.last_name ,e
+from employees employee join employees manager
+on(employee.manager_id = manager.employee_id
+SELECT * FROM jobs

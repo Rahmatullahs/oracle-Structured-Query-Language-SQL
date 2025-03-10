@@ -1,0 +1,7 @@
+Point of sales
+ Process payments
+Track inventory
+Analyze sales
+Create invoices
+Collect marketing data:
+Manage customer relationships

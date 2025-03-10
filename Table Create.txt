@@ -1,88 +1,79 @@
-CREATE TABLE emp(
-emp_id number(6) CONSTRAINT emp_id_pk PRIMARY KEY,
-name varchar2(30) not null,
-salary NUMBER(8,2) NOT NULL,
-email varchar2(25) NOT NULL,
-CONSTRAINT emp_email_unq UNIQUE(email)
+create table emp1287799(
+eid number(6) constraint emp_pk primary key,
+ename varchar2(30) not null,
+salary number (8,2) not null,
+hire_date date not null,
+address varchar2(25) not null
 );
 
-DESCRIBE emp;
 
-SELECT
-    * FROM emp;
-    
-    
-    
-    CREATE TABLE emp1287519 (
-    e_id NUMBER(4) CONSTRAINT e_id_pk PRIMARY key,  
-    ename VARCHAR(20) NOT NULL,
-    salary NUMBER(8,2) NOT NULL,
-    hire_date DATE NOT NULL,
-    address  VARCHAR2(30) NOT NULL
-    
-    );
-    
-    alter table emp add (
-    department_id number(6),
-    department_name varchar2(30));
-    
-        alter table emp DROP (
-    department_id ,
-    department_name );
-    
-     alter table emp add (
-    department_id number(6),
-    department_name varchar2(30));
-    
-    INSERT INTO emp VALUES (1, 'Rahmat',12000 ,'rahmat@gmail.com',011,'IT');
-        INSERT INTO emp VALUES (2, 'Easin', 22000, 'easin@gmail.com',012),'hacker';
-            INSERT INTO emp VALUES (3, 'sathge', 20000, 'sathge@gmail.com',013,'programmer');
-                INSERT INTO emp VALUES (4, 'Rakib', 32000,'rakib@gmail.com',014,'Developer');
-   
-    SELECT
-    * FROM emp;   
-       
-       
-       
-         
-     alter table emp1287519 add (
-    department_id number(6),
-    department_name varchar2(30));
-    
-    
-       
-    INSERT INTO emp1287519 VALUES (1, 'Rahmat',12000 ,'01-jan-2006','dhanmondi',011,'IT');
-        INSERT INTO emp1287519 VALUES (2, 'Easin', 22000, '01-mar-2006','bonani',012,'hacker');
-            INSERT INTO emp1287519 VALUES (3, 'sathge', 20000,'01-jun-2006', 'jigatola',013,'programmer');
-                INSERT INTO emp1287519 VALUES (4, 'Rakib', 32000,'01-apr-2006','mirpur',014,'Developer');
-       
-       ans 2       
- SELECT department_id, ROUND(AVG(salary),2)
-FROM employees
-GROUP BY department_id
-HAVING MAX(salary)>12000;c;
-       
-       
-        SELECT department_id, round(avg(salary,0)
-    FROM employees 
-group by department_id
-       having max(salary)>12000; 
-       
-     ans 3
-        SELECT ename
-    FROM emp1287519
-    WHERE ename  LIKE  's_%';
-    
-  
-    
-      SELECT department_id, ROUND(AVG(salary),0),max(salary)
-FROM employees
-GROUP BY department_id
-ORDER BY 2 DESC;  
+alter table emp1287799 add(
+department_id number(6),
+department_name varchar2(10)
+);
 
-  ans 4
-  SELECT ename,hire_date
-  FROM emp1287519
-order by 2;
 
+INSERT INTO emp1287799 VALUES (1,'rakib',25000,'05-jan-25','Dhaka',101,'JAVA');
+INSERT INTO emp1287799 VALUES (2,'sakib',26000,'01-feb-25','RAJSHAHI',101,'JAVA');
+INSERT INTO emp1287799 VALUES (3,'eiasin',30000,'12-mar-25','Munshiganj',101,'JAVA');
+INSERT INTO emp1287799 VALUES (4,'Atik',32000,'19-dec-25','Dhaka',101,'JAVA');
+
+
+
+select * from emp1287799;
+
+
+
+
+select last_name,salary, department_name,manager_id,country_name,postal_code,
+state_province,max_salary,region_name
+from employees 
+NATURAL JOIN departments 
+NATURAL JOIN countries 
+NATURAL JOIN locations
+NATURAL JOIN jobs
+NATURAL JOIN regions
+where salary>6000
+order by 2 desc
+fetch FIRST 5 ROWS ONLY;
+
+
+select  distinct salary, department_name,manager_id,country_name,postal_code,
+state_province,max_salary,region_name
+from employees 
+NATURAL JOIN departments 
+NATURAL JOIN countries 
+NATURAL JOIN locations
+NATURAL JOIN jobs
+NATURAL JOIN regions
+where salary<6000
+order by 2 desc
+ OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
+ 
+ 
+ 
+ --important--
+ select e.first_name, d.department_name, l.street_address, l.city, 
+ c.country_name,d.manager_id,e.salary
+ from employees e
+ join departments d on e.department_id=d.department_id
+ join Locations l on l.location_id=d.location_id
+ join countries c on l.country_id=c.country_id
+ where e.salary> 3000
+ order by e.salary desc
+ OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ select e.last_name,d.department_id, l.street_address, c.country_name,r.region_id,r.region_name
+ from employees e 
+ join departments d on e.department_id=d.department_id
+ join locations l on d.location_id=l.location_id
+ join countries c on l.country_id=c.country_id
+ join regions r on c.region_id=r.region_id;
  
