@@ -1,0 +1,9 @@
+
+joining a tanle to itself
+we call  it self_join
+self join by on clouse
+
+
+select employee.last_name worker,manager.last_name manager
+from employees employee join employees manager
+on(employee.manager_id = manager.employee_id);
