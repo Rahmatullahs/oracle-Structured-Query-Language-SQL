@@ -1,0 +1,7 @@
+non equi-join
+
+SELECT e.last_name,e.salary,j.grade
+ FROM employees e join job grades
+ on
+ e.salary
+ between j.lowest_sal and j.highest_sal;

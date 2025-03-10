@@ -1,0 +1,6 @@
+cartesian products
+we use it for big data
+
+SELECT last_name,department_name
+FROM employees e full outer join departments d
+on(e.department_id = d.department_id);
