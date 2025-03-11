@@ -2,14 +2,12 @@ sql case incensitive
 
 
 
-DBMS
-database management system
+DBMS (Database management system)
 
-rdbms
-Relational database management system
+RDBMS (Relational database management system)
 dr.e.f.codd 1970
 
-dml (data manupulation language) we use it most
+DML (data manupulation language) we use it most
 
 select
 insert
@@ -17,7 +15,7 @@ update
 delete
 merge
 
-DDL (data defination language)
+DDL (Data defination language)
 create
 alter
 drop
@@ -25,11 +23,12 @@ rename
 truncate
 comment
 
-data control language
+DCL(Data control language)
 grant
 revoke
 
-transaction control
+
+Transaction control
 commit parmanent save
 rollback undo
 savepoint
