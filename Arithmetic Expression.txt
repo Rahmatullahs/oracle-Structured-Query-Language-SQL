@@ -1,5 +1,8 @@
 Arithmetic Expression
-+ add
-- substract
-* multiply
-/ divide
+
+Operator	Description	
++		Add	
+-		Subtract	
+*		Multiply	
+/		Divide	
+%		Modulo	
