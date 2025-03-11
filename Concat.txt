@@ -1,0 +1,10 @@
+concate means adding
+
+select first_name ||''|| last_name as " Full Name"
+from employees;
+
+select first_name ||'hello'|| last_name as " Full Name"
+from employees;
+
+select first_name ||''|| last_name|| 'bye' as " Full Name"
+from employees;
