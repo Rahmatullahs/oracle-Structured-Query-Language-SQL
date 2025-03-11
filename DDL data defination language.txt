@@ -1,0 +1,13 @@
+object 
+table
+view
+secquence
+index
+synonym
+
+Naming rules
+we cant start with number
+1-30 characters long
+not be oracal resarve word
+not use same name in one user
+

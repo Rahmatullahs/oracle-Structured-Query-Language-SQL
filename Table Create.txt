@@ -1,3 +1,19 @@
+
+Create tabe statement
+we need to privilege
+and storage .
+so we cant creat table in sql live , we can in sql developer app.
+
+constraints typs
+not null = we need put some data
+unique =
+primary key =
+foreign key=ones primary key when we use on another table its foreign key.
+check =we use conditions that must be true.
+
+
+
+
 create table emp1287799(
 eid number(6) constraint emp_pk primary key,
 ename varchar2(30) not null,

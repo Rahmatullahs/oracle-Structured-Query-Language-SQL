@@ -1,0 +1,23 @@
+varchar2 (size)
+variable-length character data
+it use storage whatever it need
+32767bytes max
+
+char (size)
+fixed-length character data
+it means if we declare a size,those size need or not program use declared storage.
+max size 2000.
+
+number(p,s)
+variable-length numeric data
+p= how many digit you want to see,38
+s= means after decimal how many digit you want to see,127
+example 
+salary(number8,2)
+
+
+date
+date and time value
+
+long
+use 2gb supported

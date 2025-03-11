@@ -1,0 +1,35 @@
+sql case incensitive
+
+
+
+DBMS
+database management system
+
+rdbms
+Relational database management system
+dr.e.f.codd 1970
+
+dml (data manupulation language) we use it most
+
+select
+insert
+update
+delete
+merge
+
+DDL (data defination language)
+create
+alter
+drop
+rename
+truncate
+comment
+
+data control language
+grant
+revoke
+
+transaction control
+commit parmanent save
+rollback undo
+savepoint
