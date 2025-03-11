@@ -1,0 +1,6 @@
+Sql developer app need high cofigaration pc.some time its difficult to install and uninstall is not easy. we need to emit our windows to remove sql files.
+ to use sql developer app 1st we need jdk in our computer then we start the process. its hard to remamber the process to we take help from Emran code box channal.
+
+we also have alternative way. we can use sql live on our browser by sing in oracla data base . 
+
+ we use hr.employees.
