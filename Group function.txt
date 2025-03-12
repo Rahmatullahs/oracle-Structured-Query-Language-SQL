@@ -1,0 +1,1 @@
+A "group function" in SQL, also known as an "aggregate function", is a function that operates on a set of rows within a group to calculate a single result for that group, allowing you to summarize data based on specific criteria using the "GROUP BY" clause; common group functions include COUNT, SUM, AVG, MAX, and MIN, 

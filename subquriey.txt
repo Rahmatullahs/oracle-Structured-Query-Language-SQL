@@ -1,6 +1,15 @@
 Subquery
+we use subquery to solve query.
+subquery in mainquery =query in query
 
-single row query
+subquery is inner query and mainquery is outer query
+single row query retern single value
+
+multipal row query retern multipal value
+
+we use in when multipal value sort
+we use = when single value sort
+
 SELECT last_name, hire_date
  FROM   employees 
 WHERE  hire_date > ( 

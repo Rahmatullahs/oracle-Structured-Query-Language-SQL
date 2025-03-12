@@ -1,0 +1,7 @@
+Retrive data using sql select statement
+
+select *
+from employees;
+
+* full colome in table
+employees is a table name.
