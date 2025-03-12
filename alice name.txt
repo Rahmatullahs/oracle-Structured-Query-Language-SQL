@@ -1,8 +1,8 @@
-select ....as "full name"
-from emplou
+select first_name||' '|| last_name as "full name"
+from employees;
 
-select ....as name
-from emplou
+select last_name  as name
+from employees;
 
-select ....name
-from emplou
+select last_name name
+from employees;

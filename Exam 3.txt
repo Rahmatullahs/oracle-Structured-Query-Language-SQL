@@ -1,5 +1,4 @@
 mdrahmatullahshahrukh@gmail.com
-exam4
 
 --Question No 1
 CREATE TABLE emp1287470(

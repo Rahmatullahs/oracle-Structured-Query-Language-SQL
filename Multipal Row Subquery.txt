@@ -1,0 +1,107 @@
+multipal row subquery
+operator in, any, all
+
+SELECT last_name,salay,department_id 
+FROM employees
+where salary in (select min(salary)
+from employees
+);
+
+
+
+
+any operator
+
+jekono 1 ta theke choto holei hobe
+SELECT last_name,salary,department_id 
+FROM employees
+where salary < any (SELECT salary
+FROM employees
+where job_id= 'it_prog')
+and job_id<>'it_prog'
+;
+
+
+all operator
+sob gula theke theke choto holei hobe
+
+
+multiple column subqureries
+SELECT last_name,salary,department_id 
+FROM employees
+where (salary,department_id)in
+(SELECT min(salary),department_id 
+FROM employees
+group by department_id )
+order by department_id;
+
+null values in subquery
+
+we want to see null value
+king have null id
+
+
+
+
+
+
+--question-1 Display details of departments in which the maximum salary
+--is more than 10000.
+
+ SELECT * 
+ FROM DEPARTMENTS 
+ WHERE DEPARTMENT_ID IN
+                       ( SELECT DEPARTMENT_ID 
+                              FROM EMPLOYEES
+                                 GROUP BY DEPARTMENT_ID
+                                    HAVING MAX(SALARY)>10000);
+ 
+-- question-2 Display details of departments managed by ‘Smith’.
+
+SELECT * FROM DEPARTMENTS WHERE MANAGER_ID IN
+ (SELECT EMPLOYEE_ID FROM EMPLOYEES WHERE FIRST_NAME='SMITH');
+
+--question-3 Display employees who did not do any job in the past.
+--SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID
+--NOT IN (SELECT EMPLOYEE_ID FROM JOB_HISTORY)
+
+ SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID NOT IN
+ (SELECT EMPLOYEE_ID FROM JOB_HISTORY);
+
+
+Question-4
+Display details of manager who manages more than 5 employees.
+SELECT FIRST_NAME 
+FROM EMPLOYEES 
+WHERE EMPLOYEE_ID IN (SELECT MANAGER_ID 
+                        FROM EMPLOYEES
+                         GROUP BY MANAGER_ID 
+                         HAVING COUNT(*)>5);
+Question-5
+Display the departments into which no employee joined in last two years.
+SELECT * 
+FROM DEPARTMENTS
+WHERE DEPARTMENT_ID NOT IN ( SELECT DEPARTMENT_ID
+                             FROM EMPLOYEES 
+                             WHERE FLOOR((SYSDATE- HIRE_DATE)/365) < 2);
+Question-6
+Display details of current job for employees who worked as IT Programmers in the past. 
+SELECT *
+FROM JOBS 
+WHERE JOB_ID IN (SELECT JOB_ID 
+                FROM EMPLOYEES 
+                WHERE EMPLOYEE_ID IN (SELECT EMPLOYEE_ID
+                                     FROM JOB_HISTORY 
+                                     WHERE JOB_ID='IT_PROG'));
+
+
+SELECT *
+FROM JOBS ;
+
+SELECT JOB_ID 
+FROM EMPLOYEES;
+
+SELECT *
+FROM JOB_HISTORY ;
+WHERE JOB_ID='IT_PROG';                
+                
