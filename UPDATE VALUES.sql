@@ -1,0 +1,66 @@
+--UPDATE STATEMENT SYSTAX
+
+WE CAN CHANGE ROW VALUES ,NOT PRIMARY VALUSE
+NAME='SATHE KHANOM',SALARY=400000,EMAIL='sathe@gmai.com', DEPARTMENT_ID=16,DEPARTMENT_NAME='DVELOPER
+
+UPDATE  emp SET DEPARTMENT_ID=111,DEPARTMENT_NAME='PROGRAMMER',SALARY=45699
+WHERE EMP_ID =4;
+
+
+
+DELETE FROM emp WHERE  DEPARTMENT_NAME='DDD';
+
+UPDATE  emp SET EMP_ID =9,NAME='RAHMAT ULLAH',EMAIL='rahmatullah@gmai.com', DEPARTMENT_ID=10,DEPARTMENT_NAME='hacker'
+WHERE SALARY=5000;
+rollback;
+
+INSERT INTO emp(EMP_ID,SALARY,EMAIL,DEPARTMENT_ID,NAME,DEPARTMENT_NAME)
+VALUES (3,2000,'PARVAZ@gmai.com',13,'PARVAZ','DDD');
+
+INSERT INTO emp(EMP_ID,SALARY,EMAIL,DEPARTMENT_ID,NAME,DEPARTMENT_NAME)
+VALUES (3,2000,'PARVAZ@gmai.com',13,'PARVAZ','DDD');
+
+
+
+
+
+
+
+
+
+
+--DISPLAY THE DETAILS OF EMPLOYEES DRAWING THE HIGHEST SALARY IN THE DEPARTMENT
+ANS 
+SELECT EMPLOYEE_ID
+     FROM DEPARTMENTS;
+     where 
+    department_id, first_name || ' ' || last_name AS Employee_name, salary  
+     
+     SELECT *
+     FROM employees E
+     WHERE salary = 
+            (SELECT MAX(salary) 
+             FROM employees 
+                WHERE department_id = E.department_id);
+                
+                
+                
+                 SELECT * FROM DEPARTMENTS
+ WHERE DEPARTMENT_ID IN
+ (SELECT DEPARTMENT_ID FROM EMPLOYEES
+ WHERE EMPLOYEE_ID IN (SELECT EMPLOYEE_ID FROM JOB_HISTORY)
+ GROUP BY DEPARTMENT_ID
+ HAVING MAX(SALARY) >10000);
+       ANS2
+       SELECT JOB_ID,salary
+     FROM employees 
+      WHERE salary = 
+            (SELECT AVG(salary) 
+             FROM employees
+             WHERE SALARY<10000);
+             
+             
+              SELECT JOB_ID, AVG(SALARY) FROM EMPLOYEES
+ GROUP BY JOB_ID
+ HAVING AVG(SALARY)>10000
+                
