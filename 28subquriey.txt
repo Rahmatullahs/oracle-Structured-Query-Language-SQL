@@ -49,8 +49,7 @@ SELECT last_name, job_id, salary
  where salary > (Select avg(salary)
  from employees)
  ORDER BY 3;
- 
- 
+
  Select avg(salary)
  from employees;
  
