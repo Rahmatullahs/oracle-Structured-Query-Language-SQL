@@ -52,4 +52,16 @@ WHERE DEPARTMENT_ID = 80;
  where salary > (Select avg(salary)
  from employees)
  ORDER BY 3;
- COMMIT;                                                                                                                                                                                                       
+ COMMIT;   
+ 
+ 
+
+UPDATE EMP1287519
+set department_id = 
+        (SELECT department_id 
+            FROM employees 
+            WHERE empployee_id = 105)
+            where job_id =
+         (SELECT job_id 
+            FROM employees 
+            WHERE employee_id = 100);
