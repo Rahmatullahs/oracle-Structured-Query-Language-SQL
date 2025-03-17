@@ -27,6 +27,8 @@ select first_name, department_id
 from employees
 where first_name like 'a_%' and last_name like '%a';
 
+starts with the letter 'a'
+where first_name like 'A%':
 select first_name, department_id
 from employees
 where first_name like 'A%' and last_name like '%a';

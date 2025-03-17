@@ -5,3 +5,9 @@ from employees;
 
 * full colome in table
 employees is a table name.
+The AND operator displays a record if all the conditions are TRUE.
+The OR operator displays a record if any of the conditions are TRUE.
+Select all Spanish customers that starts with either "G" or "R":
+
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
