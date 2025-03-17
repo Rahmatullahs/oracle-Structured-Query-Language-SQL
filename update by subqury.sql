@@ -31,4 +31,3 @@ WHERE empployee_id = 100;
 TRUNCATE TABLE orders_demo;
 
 --database transaction
-w
