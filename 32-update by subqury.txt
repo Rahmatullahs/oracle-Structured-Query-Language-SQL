@@ -6,8 +6,6 @@ from employees
 where employee_id=205)
 where employee_id=103;
 
-
-
 --table value exchange
 
 UPDATE copy_emp
@@ -31,3 +29,15 @@ WHERE empployee_id = 100;
 TRUNCATE TABLE orders_demo;
 
 --database transaction
+
+--insert data by subquires
+
+   INSERT INTO EMP1287519 (EID, ENAME, SALARY, HIRE_DATE, 
+        ADDRESS, DEPARTMENT_ID, DEPT_NAME)
+        VALUES (&EID, '&ENAME', &SALARY, TO_DATE('&HIRE_DATE', 'YYYY-MM-DD'),
+        '&ADDRESS', &DEPARTMENT_ID, '&DEPT_NAME');
+
+        INSERT INTO EMP1287519 (EID, ENAME, SALARY, HIRE_DATE, ADDRESS,
+        DEPARTMENT_ID, DEPT_NAME)
+        VALUES (&EID, '&ENAME', &SALARY, TO_DATE('&HIRE_DATE', 'YYYY-MM-DD'),
+        '&ADDRESS', &DEPARTMENT_ID, '&DEPT_NAME');
